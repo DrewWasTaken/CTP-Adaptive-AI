@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Enemy Movement")]
     public Transform Player;
+    
     public int MoveSpeed = 4;
     public int MaxDist = 10;
     public float MinDist = 5f;
@@ -57,6 +58,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        anim.Play("Death");
         Destroy(gameObject);
     }
 }
