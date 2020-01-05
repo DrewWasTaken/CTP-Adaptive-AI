@@ -11,9 +11,9 @@ public class WaveSpawner : MonoBehaviour
     {
         public string name;
         public Transform enemy;
+
         public int enemyCount;
         public float spawnRate;
-
     }
 
     public Wave[] waves;
@@ -25,6 +25,9 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
+
+    public int xPos;
+    public int zPos;
 
     void Start()
     {
@@ -38,7 +41,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if(!EnemyIsAlive())
             {
-                Debug.Log("Wave Completed");
+                Debug.Log("Wave Completed!");
             }
             else
             {
@@ -91,10 +94,12 @@ public class WaveSpawner : MonoBehaviour
 
 
 
-    void SpawnEnemy (Transform _enemy)
+    void SpawnEnemy (Transform enemy)
     {
-        // Spawn Enemy
-        Debug.Log("Spawning Enemy" + _enemy.name);
-    }
+        xPos = Random.Range(1, 50);
+        zPos = Random.Range(1, 31);
 
+        Debug.Log("Spawning Enemy" + enemy.name);
+        Instantiate(enemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
+    }
 }

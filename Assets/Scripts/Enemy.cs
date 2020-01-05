@@ -4,12 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
-
-
     [SerializeField] private Animator anim;
     [SerializeField] private Rigidbody rb;
     
-   
    
     [Header("Enemy Health")]
     public float health = 50f;
