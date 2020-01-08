@@ -11,11 +11,13 @@ public class WaveSpawner : MonoBehaviour
     {
         public string name;
         public Transform enemy;
+        public Transform fireEnemy;
 
         public int enemyCount;
         public float spawnRate;
     }
 
+    public int whichEnemy = 0;
     public Wave[] waves;
     private int nextWave = 0;
 
@@ -41,6 +43,9 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+
+        whichEnemy = Random.Range(1,3);
+
         if(state == SpawnState.WAITING)
         {
             if(!EnemyIsAlive())
@@ -65,6 +70,7 @@ public class WaveSpawner : MonoBehaviour
         {
             waveCountdown -= Time.deltaTime;
         }
+
     }
 
     void WaveCompleted()  //Add Difficulty Multiplier For More Waves Here
@@ -121,10 +127,60 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy (Transform _enemy)
     {
-
-
         Debug.Log("Spawning Enemy" + _enemy.name);
-        Transform _sp = spawnPoints[ Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+
+        if (whichEnemy==1)
+        {
+            Transform _sp = spawnPoints[ Random.Range(0, spawnPoints.Length)];
+            Instantiate(_enemy, _sp.position, _sp.rotation);
+        }
+        else
+        {
+            Transform _sp = spawnPoints[ Random.Range(0, spawnPoints.Length)];
+            Instantiate(_enemy, _sp.position, _sp.rotation);
+        }
+
+
+        
+        
     }
+
+
+        void EnemiesKilled()
+        {
+            if(enemyType1.iskilled)
+            {
+                enemyType1Counter++;
+            }
+
+            if(enemyType2.iskilled)
+            {
+                enemyType2Counter++;
+            }
+
+            if(enemyType3.iskilled)
+            {
+                enemyType3Counter++;
+            }
+
+
+            
+        }
+
+
+
+        void SpliceEnemies()
+        {
+            int enemyType1Counter = 0;
+            int enemyType2Counter = 0;
+            int enemyType3Counter = 0;
+            
+            if (enemyType1Counter > enemyType2Counter)
+            {
+                Destroy gameobject.enemyType1;
+            }
+
+        }
+
+
 }
