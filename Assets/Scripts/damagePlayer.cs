@@ -10,7 +10,7 @@ public class damagePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print(playerHealth);
+        //print(playerHealth);
 
     }
 

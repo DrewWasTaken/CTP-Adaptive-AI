@@ -38,6 +38,8 @@ public class Gun : MonoBehaviour
            if (target != null)
            {
                target.TakeDamage(damage);
+               Score.scoreCount += 10;
+
            }
 
            if(hit.rigidbody != null)

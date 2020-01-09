@@ -35,13 +35,15 @@ public class Enemy : MonoBehaviour
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             //Play Walking Blend Tree
-            //anim.Play();
+            anim.Play("Walk");
 
 
 
             if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
             {
                 //Enemy Attack + Anim Script
+                anim.Play("Attack");
+
             }
 
         }
@@ -58,7 +60,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        anim.Play("Death");
+        anim.Play("Dead");
         Destroy(gameObject);
     }
 }
