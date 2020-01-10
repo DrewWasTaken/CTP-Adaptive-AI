@@ -15,45 +15,56 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Movement")]
     public Transform Player;
     
-    public int MoveSpeed = 4;
+    public float  MoveSpeed = 4f;
     public int MaxDist = 10;
     public float MinDist = 5f;
 
+
+    public int playerHealth = 30;
+    int damagePlayer = 10;
+
+
    void Awake()
     {
-        if(!anim) { gameObject.GetComponent<Animator>(); }
-        if(!rb) { gameObject.GetComponent<Rigidbody>(); }
+        if(!anim) GetComponent<Animator>();
+        if(!rb) GetComponent<Rigidbody>();
         Player = GameObject.FindWithTag("Player").transform;
     }
     
 
-    void Update()
+void Update()
+{
+    transform.LookAt(Player);
+    var dist = Vector3.Distance(transform.position, Player.position);
+    if ( dist >= MinDist)
     {
-        transform.LookAt(Player);
-
-        if (Vector3.Distance(transform.position, Player.position) >= MinDist)
-        {
-
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-            //Play Walking Blend Tree
-            anim.Play("MoveSpeed", 1);
-        }
-            else
-            {
-                anim.Play("MoveSpeed", 0);
-    
-            }
-
-            if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
-            {
-                //Enemy Attack + Anim Script
-                anim.SetTrigger("Attack");
-                anim.ResetTrigger("Attack");
-
-            }
-
-        
+        transform.position += transform.forward * (MoveSpeed * Time.deltaTime);
+        //Play Walking Blend Tree
+        anim.Play("MoveSpeed", 1);
     }
+    else
+    {
+        anim.Play("MoveSpeed", 0);
+    }
+
+    if (dist <= MaxDist)
+    {
+        //Enemy Attack + Anim Script
+        anim.SetTrigger("Attack");
+        anim.ResetTrigger("Attack");
+    }
+}
+
+void OnCollisionEnter(Collision _collision)
+    {
+        if(_collision.gameObject.CompareTag("Enemy"))
+        {
+            playerHealth -= damagePlayer;
+            Debug.Log ($"Enemy Damages Player {playerHealth}");
+        }
+
+    }
+
 
         public void TakeDamage (float amount)
     {
@@ -64,9 +75,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
-        anim.Play("Dead");
-        Destroy(gameObject);
+        WaveSpawner.Instance.EnemyKilled(enemyType);
+        damagePlayer = 0;
+        MoveSpeed = 0;
+        anim.Play("zombie_death_standing") ;
+        Destroy(gameObject,3f);
     }
 }

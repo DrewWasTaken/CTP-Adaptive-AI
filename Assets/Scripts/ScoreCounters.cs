@@ -5,64 +5,74 @@ using UnityEngine;
 public class ScoreCounters : MonoBehaviour
 {
     
-    int enemyType1Counter;
-    int enemyType2Counter;
-    int enemyType3Counter;
-    int enemyType4Counter;
-    int enemyType5Counter;
-    int enemyType6Counter;
-
-    void Start()
-    {
-        
-    }
+    int enemyType1Counter = 0;
+    int enemyType2Counter = 0;
+    int enemyType3Counter = 0;
+    int enemyType4Counter = 0;
+    int enemyType5Counter = 0;
+    int enemyType6Counter = 0;
 
     void Update()
     {
         
     }
+    
+    public void EnemyKilled(Enemies enemyType)
+    {
+        switch (enemyType)
+    {
+        case Enemies.Fire:
+            // Add to fire  enemy total
+            break;
+        case Enemies.Ice:
+            // Add to Ice   enemy total
+            break;
+        case Enemies.Type4:
+            // Add to Type4 enemy total
+            break;
+        case Enemies.Type5:
+            // Add to Type5 enemy total
+            break;
+        case Enemies.Type6:
+            // Add to Type6 enemy total
+            break;
+        case Enemies.Normal:
+        default:
+            // Add to normie enemy total
+            break;
+    }
+}
 
 /*
-        void EnemiesKilled()
-        {
-            if(enemyType1.iskilled)
-            {
-                enemyType1Counter++;
-            }
 
-            if(enemyType2.iskilled)
-            {
-                enemyType2Counter++;
-            }
+public class NormalEnemy : Enemy
+{
+  private int key = 1; //index of this enemy type. The key.
 
-            if(enemyType3.iskilled)
-            {
-                enemyType3Counter++;
-            }
+  //You now inherit from your enemy class.
 
-
-            
-        }
+   //...........
+//Make sure pass by ref...
+public void incrementCount(int[] enemyCounter){
+  enemyCounter[key]++;
+  }
+}
+}
+//In you update, in wavespawner you only need....:
+foreach(Enemy enemy in EnemyList){
+  if(enemy.die())
+    enemy.incrementCount(enemyCounter)
 
 
 
-        void SpliceEnemies()
-        {
-            int enemyType1Counter = 0;
-            int enemyType2Counter = 0;
-            int enemyType3Counter = 0;
-            int enemyType4Counter = 0;
-            int enemyType5Counter = 0;
-            int enemyType6Counter = 0;
-            
+    }
+
+    /*        
             if (enemyType1Counter > enemyType2Counter)
             {
                 Destroy gameobject.enemyType1;
                 Instantiate
             }
-
         }
-
-
-*/
+    */
 }

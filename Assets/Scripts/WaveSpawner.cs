@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
     public class Wave
     {
         public string name;
+        [Header("Enemies To Spawn")]
         public Transform enemy;
 
         public GameObject NormalEnemy;
@@ -20,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
         public float spawnRate;
     }
 
-    enum Enemies {NormalEnemy, FireEnemy, IceEnemy, enemyType4, enemyType5, enemyType6};
+    public enum Enemies {NormalEnemy, FireEnemy, IceEnemy, enemyType4, enemyType5, enemyType6};
 
     public Wave[] waves;
     private int nextWave = 0;
