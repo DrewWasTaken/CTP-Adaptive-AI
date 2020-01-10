@@ -988,7 +988,6 @@ GameObject:
   - component: {fileID: 9171199413507608116}
   - component: {fileID: 9171199413507608119}
   - component: {fileID: 7541564553192567536}
-  - component: {fileID: 1260831757872544267}
   - component: {fileID: 8936208922820710001}
   m_Layer: 0
   m_Name: Enemy3
@@ -1023,7 +1022,7 @@ Animator:
   m_GameObject: {fileID: 9171199413507608107}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 520328afa68e691429451635bbb84c79, type: 3}
-  m_Controller: {fileID: 9100000, guid: c929656c07909194ab8a5cd79f5f371d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2bab63dba5da52a4fa0a05970f9dfed3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1062,19 +1061,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &1260831757872544267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9171199413507608107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9df7100400af3c4db6355732c739636, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
 --- !u!114 &8936208922820710001
 MonoBehaviour:
   m_ObjectHideFlags: 0

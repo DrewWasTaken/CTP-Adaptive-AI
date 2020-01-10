@@ -19,12 +19,13 @@ public class Enemy : MonoBehaviour
     public int MaxDist = 10;
     public float MinDist = 5f;
 
-
    void Awake()
     {
         if(!anim) { gameObject.GetComponent<Animator>(); }
-        if(!rb) { gameObject.GetComponent<Animator>(); }
+        if(!rb) { gameObject.GetComponent<Rigidbody>(); }
+        Player = GameObject.FindWithTag("Player").transform;
     }
+    
 
     void Update()
     {
@@ -35,18 +36,23 @@ public class Enemy : MonoBehaviour
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             //Play Walking Blend Tree
-            anim.Play("Walk");
-
-
+            anim.Play("MoveSpeed", 1);
+        }
+            else
+            {
+                anim.Play("MoveSpeed", 0);
+    
+            }
 
             if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
             {
                 //Enemy Attack + Anim Script
-                anim.Play("Attack");
+                anim.SetTrigger("Attack");
+                anim.ResetTrigger("Attack");
 
             }
 
-        }
+        
     }
 
         public void TakeDamage (float amount)

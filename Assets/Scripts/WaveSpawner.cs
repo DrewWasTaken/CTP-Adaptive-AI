@@ -20,9 +20,7 @@ public class WaveSpawner : MonoBehaviour
         public float spawnRate;
     }
 
-    public int whichEnemy = 0;
-
-    enum Enemies {enemyType1, enemyType2, enemyType3, enemyType4, enemyType5, enemyType6};
+    enum Enemies {NormalEnemy, FireEnemy, IceEnemy, enemyType4, enemyType5, enemyType6};
 
     public Wave[] waves;
     private int nextWave = 0;
@@ -38,8 +36,6 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
-        Enemies enemyList;
-
         if(spawnPoints.Length == 0)
         {
             Debug.LogError("No Spawn Points Referenced");
@@ -51,8 +47,6 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-
-        whichEnemy = Random.Range(1,3);
 
         if(state == SpawnState.WAITING)
         {
@@ -141,46 +135,4 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(_enemy, _sp.position, _sp.rotation);
     }
 
-/*
-        void EnemiesKilled()
-        {
-            if(enemyType1.iskilled)
-            {
-                enemyType1Counter++;
-            }
-
-            if(enemyType2.iskilled)
-            {
-                enemyType2Counter++;
-            }
-
-            if(enemyType3.iskilled)
-            {
-                enemyType3Counter++;
-            }
-
-
-            
-        }
-
-
-
-        void SpliceEnemies()
-        {
-            int enemyType1Counter = 0;
-            int enemyType2Counter = 0;
-            int enemyType3Counter = 0;
-            int enemyType4Counter = 0;
-            int enemyType5Counter = 0;
-            int enemyType6Counter = 0;
-            
-            if (enemyType1Counter > enemyType2Counter)
-            {
-                Destroy gameobject.enemyType1;
-                Instantiate
-            }
-
-        }
-
-*/
 }
