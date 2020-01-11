@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using static WaveSpawner;
 public class ScoreCounters : MonoBehaviour
 {
-    
-    int enemyType1Counter = 0;
-    int enemyType2Counter = 0;
-    int enemyType3Counter = 0;
+    public Enemies enemyType;
+
+    int enemyTypeNormalCounter = 0;
+    int enemyTypeFireCounter = 0;
+    int enemyTypeIceCounter = 0;
     int enemyType4Counter = 0;
     int enemyType5Counter = 0;
     int enemyType6Counter = 0;
@@ -21,24 +22,24 @@ public class ScoreCounters : MonoBehaviour
     {
         switch (enemyType)
     {
-        case Enemies.Fire:
-            // Add to fire  enemy total
+        case Enemies.FireEnemy:
+            enemyTypeFireCounter++;            
             break;
-        case Enemies.Ice:
-            // Add to Ice   enemy total
+        case Enemies.IceEnemy:
+            enemyTypeIceCounter++;
             break;
-        case Enemies.Type4:
-            // Add to Type4 enemy total
+        case Enemies.enemyType4:
+            enemyType4Counter++;
             break;
-        case Enemies.Type5:
-            // Add to Type5 enemy total
+        case Enemies.enemyType5:
+            enemyType5Counter++;
             break;
-        case Enemies.Type6:
-            // Add to Type6 enemy total
+        case Enemies.enemyType6:
+            enemyType6Counter++;
             break;
-        case Enemies.Normal:
+        case Enemies.NormalEnemy:
         default:
-            // Add to normie enemy total
+            enemyTypeNormalCounter++;
             break;
     }
 }

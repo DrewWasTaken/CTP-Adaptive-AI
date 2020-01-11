@@ -11,17 +11,13 @@ public class WaveSpawner : MonoBehaviour
     {
         public string name;
         [Header("Enemies To Spawn")]
-        public Transform enemy;
-
-        public GameObject NormalEnemy;
-        public GameObject FireEnemy;
-        public GameObject IceEnemy;
-
-        public int enemyCount;
+        public Enemies[] enemySpawnSequence;
+        //public int enemyCount;
         public float spawnRate;
     }
 
-    public enum Enemies {NormalEnemy, FireEnemy, IceEnemy, enemyType4, enemyType5, enemyType6};
+    //Enemy Hierarchy Dropdown
+    [SerializeField] public GameObject[] enemyTypes;    
 
     public Wave[] waves;
     private int nextWave = 0;
@@ -114,12 +110,12 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
-        Debug.Log("Spawning Wave: " + _wave.name);
+        Debug.Log($"Spawning Wave: {_wave.name}");
         state = SpawnState.SPAWNING;
 
-        for (int i = 0; i < _wave.enemyCount; i++)
+        for (int i = 0; i < _wave.enemySpawnSequence.Length; i++)
         {
-            SpawnEnemy(_wave.enemy);
+            SpawnEnemy(_wave.enemySpawnSequence[i]);
             yield return new WaitForSeconds(1f / _wave.spawnRate);
         }
 
@@ -129,11 +125,11 @@ public class WaveSpawner : MonoBehaviour
 
 
 
-    void SpawnEnemy (Transform _enemy)
+    void SpawnEnemy (Enemies enemyType)
     {
-        Debug.Log("Spawning Enemy" + _enemy.name);
+        Debug.Log($"Spawning Enemy {enemyType}");
         Transform _sp = spawnPoints[ Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        Instantiate(enemyTypes[(int)enemyType], _sp.position, _sp.rotation);
     }
 
 }

@@ -21,8 +21,9 @@ public class Enemy : MonoBehaviour
 
 
     public int playerHealth = 30;
-    int damagePlayer = 10;
+    int damagePlayer = 10; 
 
+    public Enemies myType;
 
    void Awake()
     {
@@ -77,7 +78,7 @@ void OnCollisionEnter(Collision _collision)
 
     public void Die()
     {
-        WaveSpawner.Instance.EnemyKilled(enemyType);
+        //ScoreCounters.EnemyKilled(myType);
         damagePlayer = 0;
         MoveSpeed = 0;
         anim.Play("zombie_death_standing") ;
