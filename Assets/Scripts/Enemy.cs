@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static PlayerStats;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Animator anim;
@@ -19,17 +20,19 @@ public class Enemy : MonoBehaviour
     public int MaxDist = 10;
     public float MinDist = 5f;
 
-
-    public int playerHealth = 30;
     int damagePlayer = 10; 
 
     public Enemies myType;
+    private ScoreCounters scoreCounter;
+    
+    bool isDying = false;
 
    void Awake()
     {
         if(!anim) GetComponent<Animator>();
         if(!rb) GetComponent<Rigidbody>();
         Player = GameObject.FindWithTag("Player").transform;
+        scoreCounter = GameObject.FindWithTag("GameController").GetComponent<ScoreCounters>();
     }
     
 
@@ -58,10 +61,10 @@ void Update()
 
 void OnCollisionEnter(Collision _collision)
     {
-        if(_collision.gameObject.CompareTag("Enemy"))
+        if(_collision.gameObject.CompareTag("Player"))
         {
-            playerHealth -= damagePlayer;
-            Debug.Log ($"Enemy Damages Player {playerHealth}");
+            _playerHealth -= damagePlayer;
+            Debug.Log ($"Enemy Damages Player {_playerHealth}");
         }
 
     }
@@ -78,10 +81,14 @@ void OnCollisionEnter(Collision _collision)
 
     public void Die()
     {
-        //ScoreCounters.EnemyKilled(myType);
-        damagePlayer = 0;
-        MoveSpeed = 0;
-        anim.Play("zombie_death_standing") ;
-        Destroy(gameObject,3f);
+        if(!isDying)
+        {
+            isDying = true;
+            scoreCounter.EnemyKilled(myType);
+            damagePlayer = 0;
+            MoveSpeed = 0;
+            anim.Play("zombie_death_standing") ;
+            Destroy(gameObject,3f);
+        }
     }
 }

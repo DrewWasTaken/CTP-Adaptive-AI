@@ -760,8 +760,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbfb94ee160a5ba438fe6800a715c818, type: 2}
-  - {fileID: 2100000, guid: 3bc48c5e360e37549b37238f7c12b51b, type: 2}
+  - {fileID: 2100000, guid: 78c8c833a1a3bbd4cab4bb30d75c0367, type: 2}
+  - {fileID: 2100000, guid: faa3ae66a4a4c2449a5b8833fbb9b4ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 7541564553192567536}
   - component: {fileID: 8936208922820710001}
   m_Layer: 0
-  m_Name: Enemy3
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1004,8 +1004,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9171199413507608107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.641, y: 0, z: -31.917694}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 481370701804200397}
   - {fileID: 5476064098041350579}
@@ -1022,7 +1022,7 @@ Animator:
   m_GameObject: {fileID: 9171199413507608107}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 520328afa68e691429451635bbb84c79, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2bab63dba5da52a4fa0a05970f9dfed3, type: 2}
+  m_Controller: {fileID: 9100000, guid: f3dcc5e3b28e01f4bbcf848c6130daef, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1075,8 +1075,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 9171199413507608116}
   rb: {fileID: 9171199413507608119}
-  health: 10
+  health: 200
   Player: {fileID: 7823852970853930084, guid: 55f9ba916969df94ba5c6d444e889ab1, type: 3}
-  MoveSpeed: 5
+  MoveSpeed: 1
   MaxDist: 1000
   MinDist: 0.5
+  playerHealth: 30
+  myType: 1

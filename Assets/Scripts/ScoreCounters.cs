@@ -6,16 +6,16 @@ public class ScoreCounters : MonoBehaviour
 {
     public Enemies enemyType;
 
-    int enemyTypeNormalCounter = 0;
-    int enemyTypeFireCounter = 0;
-    int enemyTypeIceCounter = 0;
-    int enemyType4Counter = 0;
-    int enemyType5Counter = 0;
-    int enemyType6Counter = 0;
+    public int enemyTypeNormalCounter = 0;
+    public int enemyTypeFireCounter = 0;
+    public int enemyTypeIceCounter = 0;
+    public int enemyType4Counter = 0;
+    public int enemyType5Counter = 0;
+    public int enemyType6Counter = 0;
 
     void Update()
     {
-        
+        Debug.Log($"Killed {enemyType}");
     }
     
     public void EnemyKilled(Enemies enemyType)
