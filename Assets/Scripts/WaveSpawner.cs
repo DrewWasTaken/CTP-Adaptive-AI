@@ -12,7 +12,6 @@ public class WaveSpawner : MonoBehaviour
         public string name;
         [Header("Enemies To Spawn")]
         public Enemies[] enemySpawnSequence;
-        //public int enemyCount;
         public float spawnRate;
     }
 
@@ -91,7 +90,6 @@ public class WaveSpawner : MonoBehaviour
             WaveDisplay.waveNumber ++;
         }
     }
-
 
     bool EnemyIsAlive()
     {

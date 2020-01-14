@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BF67964D-044A-FCA9-F30C-D755535DD977}</ProjectGuid>
+    <ProjectGuid>{A6CC17A3-9CE4-D524-CC74-30AD794DB20B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -53,58 +53,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Editor\ReadmeEditor.cs" />
      <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageChecker.cs" />
      <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProGrids">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProGrids.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>T:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -293,7 +294,7 @@
  <HintPath>T:/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPRepo/CTP/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>T:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -652,15 +653,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{D83ECE90-189A-ACDD-79DD-7A08F1C25740}</Project>
+      <Project>{3E4D52FE-A126-774E-4494-DCE19B9C1154}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{55C0E3FC-1310-91F8-CBE7-AF7D22EC2A79}</Project>
+      <Project>{582E405F-4F1D-D2B0-4298-EC3118785DAB}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{03549BD7-D374-0CA9-ACDB-02377DDCE2D8}</Project>
+      <Project>{50C9EB3C-C02C-0480-5202-2EFCF1854800}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>

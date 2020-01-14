@@ -42,6 +42,8 @@ public class ScoreCounters : MonoBehaviour
             enemyTypeNormalCounter++;
             break;
     }
+
+    // if(Wave5) Compare which enemy counter has highest number, remove them, replace with Enemy4
 }
 
 /*

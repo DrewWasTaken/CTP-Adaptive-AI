@@ -18,6 +18,16 @@ public class PlayerStats : MonoBehaviour
         _playerHealth = 100;
     }
 
+
+    void Update()
+    {
+        if (_playerHealth < 0) 
+        {
+            _playerHealth = 0;
+            KillPlayer();
+        }    
+    }
+
     public void KillPlayer()
     {
         if(_playerHealth <= 0)
