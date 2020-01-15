@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static PlayerStats;
-
+using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Animator anim;
@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
 
     public Enemies myType;
     private ScoreCounters scoreCounter;
-
     bool isDying = false;
 
    void Awake()
@@ -34,6 +33,8 @@ public class Enemy : MonoBehaviour
         if(!rb) GetComponent<Rigidbody>();
         Player = GameObject.FindWithTag("Player").transform;
         scoreCounter = GameObject.FindWithTag("GameController").GetComponent<ScoreCounters>();
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+
     }
     
 void Update()
@@ -85,8 +86,7 @@ void OnCollisionEnter(Collision _collision)
         if(!isDying)
         {
             isDying = true;
-/*             navMeshAgent.velocity = Vector3.zero;
-            navMeshAgent.Stop(); */
+            rb.constraints = RigidbodyConstraints.FreezeAll; 
             scoreCounter.EnemyKilled(myType);
             damagePlayer = 0;
             MoveSpeed = 0;
