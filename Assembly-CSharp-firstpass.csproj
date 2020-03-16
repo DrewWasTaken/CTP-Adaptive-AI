@@ -2,8 +2,6 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.2.0f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
-    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3E4D52FE-A126-774E-4494-DCE19B9C1154}</ProjectGuid>
+    <ProjectGuid>{A493113C-E920-0CCE-0011-1CB04ABDBD1D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -142,49 +140,49 @@
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProGrids">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProGrids.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTPProject3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

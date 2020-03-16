@@ -514,63 +514,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357928781}
   m_CullTransparentMesh: 0
---- !u!1 &376902312 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1674653834}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &376902313
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376902312}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &395973715 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1548184273}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &395973716
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395973715}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &406868104 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
-    type: 3}
-  m_PrefabInstance: {fileID: 995259369}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &406868105
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406868104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &434282018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2174736672002840760, guid: ca90f391426667043b9155849f4ec07c,
@@ -665,25 +608,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &500273120 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1376252586}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &500273121
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500273120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &564646477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3277,7 +3201,7 @@ PrefabInstance:
     - target: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawnPoint
+      value: EnemySpawnPoint3
       objectReference: {fileID: 0}
     - target: {fileID: 2174736672002840760, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
@@ -3333,6 +3257,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143370775, guid: ca90f391426667043b9155849f4ec07c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca90f391426667043b9155849f4ec07c, type: 3}
@@ -3617,7 +3545,7 @@ PrefabInstance:
     - target: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawnPoint
+      value: EnemySpawnPoint5
       objectReference: {fileID: 0}
     - target: {fileID: 2174736672002840760, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
@@ -3673,6 +3601,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143370775, guid: ca90f391426667043b9155849f4ec07c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca90f391426667043b9155849f4ec07c, type: 3}
@@ -4820,7 +4752,7 @@ PrefabInstance:
     - target: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawnPoint
+      value: EnemySpawnPoint6
       objectReference: {fileID: 0}
     - target: {fileID: 2174736672002840760, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
@@ -4877,6 +4809,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2143370775, guid: ca90f391426667043b9155849f4ec07c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca90f391426667043b9155849f4ec07c, type: 3}
 --- !u!4 &1526578739 stripped
@@ -4895,7 +4831,7 @@ PrefabInstance:
     - target: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawnPoint
+      value: EnemySpawnPoint2
       objectReference: {fileID: 0}
     - target: {fileID: 2174736672002840760, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
@@ -4952,6 +4888,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2143370775, guid: ca90f391426667043b9155849f4ec07c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca90f391426667043b9155849f4ec07c, type: 3}
 --- !u!1001 &1674653834
@@ -4964,7 +4904,7 @@ PrefabInstance:
     - target: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawnPoint
+      value: EnemySpawnPoint4
       objectReference: {fileID: 0}
     - target: {fileID: 2174736672002840760, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
@@ -5020,6 +4960,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143370775, guid: ca90f391426667043b9155849f4ec07c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca90f391426667043b9155849f4ec07c, type: 3}
@@ -7235,25 +7179,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029101900}
   m_CullTransparentMesh: 0
---- !u!1 &2070485182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
-    type: 3}
-  m_PrefabInstance: {fileID: 4559181338537353095}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &2070485183
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070485182}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2129551116
 GameObject:
   m_ObjectHideFlags: 0
@@ -7700,7 +7625,7 @@ PrefabInstance:
     - target: {fileID: 4839354250393297053, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawnPoint
+      value: EnemySpawnPoint1
       objectReference: {fileID: 0}
     - target: {fileID: 2174736672002840760, guid: ca90f391426667043b9155849f4ec07c,
         type: 3}
@@ -7756,6 +7681,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143370775, guid: ca90f391426667043b9155849f4ec07c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca90f391426667043b9155849f4ec07c, type: 3}
