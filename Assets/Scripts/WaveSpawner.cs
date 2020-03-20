@@ -18,12 +18,12 @@ public class WaveSpawner : MonoBehaviour
     //Enemy Hierarchy Dropdown
     [SerializeField] public GameObject[] enemyTypes;    
 
-    public Wave[] waves;
+    public Wave[] waves; //Waves Array
     private int nextWave = 0;
 
-    public Transform[] spawnPoints;
+    public Transform[] spawnPoints; //Spawn Points Array
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 5f; //Wait Duration After All Enemies Killed
     private float waveCountdown;
 
     private float searchCountdown = 1f;
@@ -36,15 +36,13 @@ public class WaveSpawner : MonoBehaviour
         {
             Debug.LogError("No Spawn Points Referenced");
         }
-        
         waveCountdown = timeBetweenWaves;
-
     }
 
     void Update()
     {
 
-        if(state == SpawnState.WAITING)
+        if(state == SpawnState.WAITING) // Game PLaying | Waiting For 0 Enemies
         {
             if(!EnemyIsAlive())
             {
@@ -71,6 +69,7 @@ public class WaveSpawner : MonoBehaviour
 
     }
 
+
     void WaveCompleted()  //Add Difficulty Multiplier For More Waves Here
     {
 
@@ -91,7 +90,7 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    bool EnemyIsAlive()
+    bool EnemyIsAlive() //Searches For Alive Enemies 
     {
     searchCountdown -= Time.deltaTime;
     if(searchCountdown <= 0f)
@@ -122,12 +121,10 @@ public class WaveSpawner : MonoBehaviour
     }
 
 
-
-    void SpawnEnemy (Enemies enemyType)
+    void SpawnEnemy (Enemies enemyType) //Spawns Enemy Varient Type
     {
         Debug.Log($"Spawning Enemy {enemyType}");
         Transform _sp = spawnPoints[ Random.Range(0, spawnPoints.Length)];
         Instantiate(enemyTypes[(int)enemyType], _sp.position, _sp.rotation);
     }
-
 }

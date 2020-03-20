@@ -34,64 +34,59 @@ public class Enemy : MonoBehaviour
         Player = GameObject.FindWithTag("Player").transform;
         scoreCounter = GameObject.FindWithTag("GameController").GetComponent<ScoreCounters>();
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-
     }
     
-void Update()
-{
-    transform.LookAt(Player);
-    var dist = Vector3.Distance(transform.position, Player.position);
-    if ( dist >= MinDist)
+    void Update()
     {
-        transform.position += transform.forward * (MoveSpeed * Time.deltaTime);
-        //Play Walking Blend Tree
-        anim.Play("MoveSpeed", 1);
-    }
-    else
-    {
-        anim.Play("MoveSpeed", 0);
-    }
-
-    if (dist <= MaxDist)
-    {
-        //Enemy Attack + Anim Script
-        anim.SetTrigger("Attack");
-        anim.ResetTrigger("Attack");
-    }
-}
-
-void OnCollisionEnter(Collision _collision)
-    {
-        if(_collision.gameObject.CompareTag("Player"))
-        {
-            _playerHealth -= damagePlayer;
-            Debug.Log ($"Enemy Damages Player {_playerHealth}");
-        }
-
-    }
-
-
-        public void TakeDamage (float amount)
-    {
-        health -= amount;
-        if(health <= 0f)
-        {
-            Die();
-        }
+        transform.LookAt(Player); //Enemy Targets Player
+        var dist = Vector3.Distance(transform.position, Player.position); //Distance To Player
         
+        if ( dist >= MinDist) // Player too far away
+        {
+            transform.position += transform.forward * (MoveSpeed * Time.deltaTime);
+            //Play Walking Blend Tree -1 Backward, 0, Idle, 1 Forward
+            anim.Play("MoveSpeed", 1);
+            MoveSpeed = 4f;
+            anim.ResetTrigger("Attack");
+        }
+        else //Player In Range
+        {
+            anim.Play("MoveSpeed", 0);
+            MoveSpeed = 0f;
+            anim.SetTrigger("Attack");
+        }
     }
+
+
+    void OnCollisionEnter(Collision _collision)
+        {
+            if(_collision.gameObject.CompareTag("Player"))
+            {
+                _playerHealth -= damagePlayer;
+            }
+                Debug.Log ($"Enemy Damages Player {_playerHealth}");
+        }
+
+    public void TakeDamage (float amount)
+        {
+            health -= amount;
+            if(health <= 0f)
+            {
+                Die();
+            }
+        }
 
     public void Die()
-    {
-        if(!isDying)
         {
-            isDying = true;
-            rb.constraints = RigidbodyConstraints.FreezeAll; 
-            scoreCounter.EnemyKilled(myType);
-            damagePlayer = 0;
-            MoveSpeed = 0;
-            anim.Play("zombie_death_standing") ;
-            Destroy(gameObject,3f);
+            if(!isDying)
+            {
+                isDying = true;
+                rb.constraints = RigidbodyConstraints.FreezeAll; 
+                scoreCounter.EnemyKilled(myType);
+                damagePlayer = 0;
+                MoveSpeed = 0f;
+                anim.Play("zombie_death_standing") ;
+                Destroy(gameObject,3f);
+            }
         }
-    }
 }
