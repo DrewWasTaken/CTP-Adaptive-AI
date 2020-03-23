@@ -24,31 +24,34 @@ public class Enemy : MonoBehaviour
     public Enemies myType;
     private ScoreCounters scoreCounter;
     bool isDying = false;
+    [SerializeField] NavMeshAgent agent;
 
    void Awake()
    {
         if(!anim) GetComponent<Animator>();
         if(!rb) GetComponent<Rigidbody>();
+        //if (!agent) GetComponent<NavMeshAgent>();
         Player = GameObject.FindWithTag("Player").transform;
         scoreCounter = GameObject.FindWithTag("GameController").GetComponent<ScoreCounters>();
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
    }
-    
+
     void Update()
     {
-        transform.LookAt(Player); //Enemy Targets Player
+        //transform.LookAt(Player); //Enemy Targets Player
         var dist = Vector3.Distance(transform.position, Player.position); //Distance To Player
 
-        if ( dist >= MinDist && !isDying) // Player Not In Range
+        if (dist >= MinDist) // Player Not In Range
         {
-            transform.position += transform.forward * (MoveSpeed * Time.deltaTime);
+            agent.SetDestination(Player.position);
+
             //Play Walking Blend Tree -1 Backward, 0, Idle, 1 Forward
             anim.Play("MoveSpeed", 1);
             MoveSpeed = 4f;
             anim.ResetTrigger("Attack");
         }
 
-        else //Player In Range
+        else //Player In Range ENEMIES HIT THIS ONE AND IDK WHY
         {
             anim.Play("MoveSpeed", 0);
             MoveSpeed = 0f;
