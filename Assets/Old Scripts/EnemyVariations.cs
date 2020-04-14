@@ -1,1 +1,0 @@
-﻿public enum Enemies {NormalEnemy, FireEnemy, IceEnemy};

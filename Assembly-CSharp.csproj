@@ -63,17 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Old Scripts\Enemy.cs" />
-    <Compile Include="Assets\Old Scripts\EnemyVariations.cs" />
-    <Compile Include="Assets\Old Scripts\GameOverUI.cs" />
-    <Compile Include="Assets\Old Scripts\Gun.cs" />
-    <Compile Include="Assets\Old Scripts\HealthUI.cs" />
-    <Compile Include="Assets\Old Scripts\PlayerStats.cs" />
-    <Compile Include="Assets\Old Scripts\Score.cs" />
-    <Compile Include="Assets\Old Scripts\ScoreCounters.cs" />
-    <Compile Include="Assets\Old Scripts\SpawnPoint.cs" />
-    <Compile Include="Assets\Old Scripts\WaveDisplay.cs" />
-    <Compile Include="Assets\Old Scripts\WaveSpawner.cs" />
+    <Compile Include="Assets\Scripts\Display\DisplayHandler.cs" />
+    <Compile Include="Assets\Scripts\Display\GameOverMenu.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawnPoint.cs" />
+    <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Plugins\DictionaryExtension.cs" />
+    <Compile Include="Assets\Scripts\Wave.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/3rd Year/CTP (Creative Technologies Project)/CTP Adaptive AI/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
