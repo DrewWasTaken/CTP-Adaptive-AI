@@ -40,6 +40,7 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("GAME OVER");
         gameOverUI.SetActive(true);
+        //Freeze player inputs, play death animation
     }
 
 

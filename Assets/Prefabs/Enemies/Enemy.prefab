@@ -1046,7 +1046,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 3
 --- !u!136 &7541564553192567536
 CapsuleCollider:
@@ -1076,12 +1076,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 9171199413507608116}
   rb: {fileID: 9171199413507608119}
+  spawners:
+  - {fileID: 6001111154708975838, guid: 06635cffce36baf429bc8be23269a105, type: 3}
+  - {fileID: 3215151401021586194, guid: 94b61ef0d12efe14ca95d37f14e3b1e9, type: 3}
+  - {fileID: 8916953608790459926, guid: 0f8b7885367fe554cabd8226fe089a44, type: 3}
+  - {fileID: 3793077362804974425, guid: 33836911b0bcb7d4583d0557881ae78c, type: 3}
+  - {fileID: 7785989138813068494, guid: 9933129b8ffeccf4fb1ebfd2a3e9d684, type: 3}
+  - {fileID: 8944066476518921315, guid: 10da19a18b7b93749acb2c7f537f14fa, type: 3}
   health: 50
   Player: {fileID: 7823852970853930084, guid: 55f9ba916969df94ba5c6d444e889ab1, type: 3}
   MoveSpeed: 3
-  MaxDist: 1000
-  MinDist: 0.9
+  MinDist: 1
   myType: 0
+  agent: {fileID: 0}
 --- !u!195 &-5110637402933317057
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1096,11 +1103,11 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
