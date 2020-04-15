@@ -1022,8 +1022,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9171199413507608107}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 122794ac5b778e84a8e5764c8e261704, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 8c53cffd52097cf4582f0a090c9a833e, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9e819696327e9bd478533f0eb27e19c4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1076,10 +1076,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 50
   _health: 0
-  _bounty: 10
-  _movementSpeed: 0
+  _score: 10
   _strength: 5
   _destroyDelay: 3
+  _attackDelay: 1.75
 --- !u!195 &-8128887955736553951
 NavMeshAgent:
   m_ObjectHideFlags: 0
