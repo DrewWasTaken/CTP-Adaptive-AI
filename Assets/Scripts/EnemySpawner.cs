@@ -13,6 +13,12 @@ public class EnemySpawner : MonoBehaviour
     private int _currentWave = -1;
     private int _destroyedEnemies = 0;
     private bool _gameOver = false;
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject victoryUI;
+    private Player player;
+
+    //DISABLE PLAYER MOVEMENT AND GUN SCRIPT ON DEATH 
+    //private GetComponent("RigidbodyFirstPersonController").enabled = false;
 
     public void Awake()
     {
@@ -21,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(_instance);
         }
+        if (!player) player = GameObject.FindObjectOfType<Player>();
     }
 
     public void OnEnemyDeath(Vector3 deathPosition)
@@ -68,12 +75,31 @@ public class EnemySpawner : MonoBehaviour
         {
             ProceedToNextWave();
         }
+
+        if (player._health <= 0)
+        {
+            //Loser Screen
+            EndGame();
+        }
     }
 
-    private void EndGame()
+    public void EndGame()
     {
+        //Disable Player Controls
+        Debug.Log("Game Over");
         _gameOver = true;
-        // Display GameOver Screen
+        
+
+        if (player._health <= 0)
+        {
+            //Loser Screen
+            gameOverUI.SetActive(true);
+        }
+        else
+        {
+            //Victory Screen
+            victoryUI.SetActive(true);
+        }
     }
 
 

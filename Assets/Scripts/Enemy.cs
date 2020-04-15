@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _strength = 10f;
     [SerializeField] private float _destroyDelay = 3f;
     [SerializeField] private float _attackDelay = 2f;
+    [SerializeField] private float _speed = 5f;
+
+    public Image healthBar;
 
     private bool _dying = false;
     Player _collidingPlayer = null;
@@ -24,6 +28,7 @@ public class Enemy : MonoBehaviour
         _animator = GetComponent<Animator>();
         _navMeshAgent.stoppingDistance = Player.instance.interactionRadius;
         StartCoroutine(Attack());
+        _navMeshAgent.speed = _speed;
     }
 
     void FixedUpdate()
@@ -63,6 +68,8 @@ public class Enemy : MonoBehaviour
     public void OnHit(float damage)
     {
         _health -= damage;
+        healthBar.fillAmount = _health / _maxHealth;
+
         if (_health <= 0f && !_dying)
         {
             Die();
@@ -88,6 +95,7 @@ public class Enemy : MonoBehaviour
             Player.instance.IncreaseScore(_score);
             _animator.SetTrigger("Die");
             EnemySpawner.instance.OnEnemyDeath(transform.position);
+            Destroy(this.GetComponent<Canvas>());
             Destroy(this.gameObject, _destroyDelay);
         }
     }
