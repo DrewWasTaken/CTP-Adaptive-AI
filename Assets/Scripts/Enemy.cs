@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
             Player.instance.IncreaseScore(_score);
             _animator.SetTrigger("Die");
             EnemySpawner.instance.OnEnemyDeath(transform.position);
-            Destroy(this.GetComponent<Canvas>());
+            this.GetComponentInChildren<Canvas>().enabled = false;
             Destroy(this.gameObject, _destroyDelay);
         }
     }

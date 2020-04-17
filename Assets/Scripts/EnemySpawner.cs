@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
+
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -12,13 +14,12 @@ public class EnemySpawner : MonoBehaviour
 
     private int _currentWave = -1;
     private int _destroyedEnemies = 0;
-    private bool _gameOver = false;
+    public bool _gameOver = false;
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject victoryUI;
-    private Player player;
-
-    //DISABLE PLAYER MOVEMENT AND GUN SCRIPT ON DEATH 
-    //private GetComponent("RigidbodyFirstPersonController").enabled = false;
+    [SerializeField] private GameObject UIAfterDeath;
+    [SerializeField] private GameObject Gun;
+    private Player player;    
 
     public void Awake()
     {
@@ -86,11 +87,14 @@ public class EnemySpawner : MonoBehaviour
     public void EndGame()
     {
         //Disable Player Controls
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
         _gameOver = true;
-        
+        //player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
+        //Gun.GetComponent<Gun>().enabled = false;
+        //UIAfterDeath.GetComponent<Canvas>().enabled = false;
+        //Cursor.visible = true;
 
-        if (player._health <= 0)
+        if (player._health <= 0) //|| !restarted)
         {
             //Loser Screen
             gameOverUI.SetActive(true);
