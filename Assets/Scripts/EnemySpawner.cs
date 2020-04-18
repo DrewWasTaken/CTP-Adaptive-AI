@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-
 public class EnemySpawner : MonoBehaviour
 {
     private static EnemySpawner _instance;
@@ -26,7 +25,6 @@ public class EnemySpawner : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(_instance);
         }
         if (!player) player = GameObject.FindObjectOfType<Player>();
     }
@@ -38,28 +36,18 @@ public class EnemySpawner : MonoBehaviour
 
         foreach (EnemySpawnPoint spawnPoint in _spawnPoints)
         {
-            RaycastHit raycastHit;
-            if (Physics.Raycast(deathPosition, spawnPoint.transform.position, out raycastHit, Mathf.Infinity, ~LayerMask.NameToLayer("SpawnPoint")))
+            float dist = Vector3.Distance(deathPosition, spawnPoint.transform.position);
+            if(smallestDistance > dist)
             {
-                if (smallestDistance > raycastHit.distance)
-                {
-                    smallestDistance = raycastHit.distance;
-                    closestSpawnPoint = spawnPoint;
-                }
+                closestSpawnPoint = spawnPoint;
+                smallestDistance = dist;
             }
+
+            spawnPoint.IncreaseProbability();
         }
 
-        _spawnPoints.ForEach(spawnPoint => 
-        {
-            if (spawnPoint.Equals(closestSpawnPoint))
-            {
-                spawnPoint.DecreaseProbability();
-            }
-            else
-            {
-                spawnPoint.IncreaseProbability();
-            }
-        });
+        closestSpawnPoint.DecreaseProbability();
+        closestSpawnPoint.DecreaseProbability();
 
         _destroyedEnemies++;
         DisplayHandler.instance.UpdateRemainingEnemies(_destroyedEnemies, _waves[_currentWave].enemies.Count);
@@ -86,15 +74,14 @@ public class EnemySpawner : MonoBehaviour
 
     public void EndGame()
     {
-        //Disable Player Controls
         //Debug.Log("Game Over");
         _gameOver = true;
-        //player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
-        //Gun.GetComponent<Gun>().enabled = false;
-        //UIAfterDeath.GetComponent<Canvas>().enabled = false;
+        player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
+        Gun.GetComponent<Gun>().enabled = false;
+        UIAfterDeath.GetComponent<Canvas>().enabled = false;
         //Cursor.visible = true;
 
-        if (player._health <= 0) //|| !restarted)
+        if (player._health <= 0)
         {
             //Loser Screen
             gameOverUI.SetActive(true);
@@ -105,7 +92,6 @@ public class EnemySpawner : MonoBehaviour
             victoryUI.SetActive(true);
         }
     }
-
 
     private void ProceedToNextWave()
     {
@@ -121,7 +107,6 @@ public class EnemySpawner : MonoBehaviour
             DisplayHandler.instance.UpdateRemainingEnemies(_destroyedEnemies, _waves[_currentWave].enemies.Count);
         }
     }
-
 
     private EnemySpawnPoint CalculateSpawnPoint()
     {

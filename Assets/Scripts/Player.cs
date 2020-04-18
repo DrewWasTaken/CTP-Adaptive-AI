@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(_instance);
         }
     }
 
