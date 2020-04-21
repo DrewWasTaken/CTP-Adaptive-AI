@@ -33,8 +33,6 @@ public class Gun : MonoBehaviour
         
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, ~LayerMask.NameToLayer("Enemy")))
         {
-            //Debug.Log(hit.transform.name);
-
            Enemy target = hit.transform.GetComponent<Enemy>();
            if (target != null)
            {

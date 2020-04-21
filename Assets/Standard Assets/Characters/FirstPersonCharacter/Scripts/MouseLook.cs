@@ -14,7 +14,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float MaximumX = 90F;
         public bool smooth;
         public float smoothTime = 5f;
-        public bool lockCursor = true;
+        public static bool lockCursor = true;
 
 
         private Quaternion m_CharacterTargetRot;
@@ -55,7 +55,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCursorLock();
         }
 
-        public void SetCursorLock(bool value)
+        public static void SetCursorLock(bool value)
         {
             lockCursor = value;
             if(!lockCursor)

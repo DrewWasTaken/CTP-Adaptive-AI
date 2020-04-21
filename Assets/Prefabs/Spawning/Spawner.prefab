@@ -43,5 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d569c18ebbd7452428cfbab391bf8097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPoints: []
-  _waves: []
+  _spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _waves:
+  - {fileID: 11400000, guid: 6b784b70ecd0cca4eab2bb3147714d1d, type: 2}
+  - {fileID: 11400000, guid: 1fd56104cf3c87d4398f29b7df5140a9, type: 2}
+  - {fileID: 11400000, guid: 6fd3360b3fa8a83459b14f57711861dd, type: 2}
+  - {fileID: 11400000, guid: de301aa2f1307504587f1c4ecbbcf928, type: 2}
+  - {fileID: 11400000, guid: 53026cf1df4d7704b8924785d713cf6f, type: 2}
+  - {fileID: 11400000, guid: fc8d592742271e44da0e3e594227047c, type: 2}
+  - {fileID: 11400000, guid: b5d462ee1f854ae4996a54ae3a99e1de, type: 2}
+  - {fileID: 11400000, guid: c247ce8e0c3d46b4c8fe1adf9c2b0128, type: 2}
+  - {fileID: 11400000, guid: e21af83081c31464ba0e641cacf6a8ac, type: 2}
+  - {fileID: 11400000, guid: e923f7e4759e34744b3b1426567aecfe, type: 2}
+  _gameOver: 0
+  gameOverUI: {fileID: 0}
+  victoryUI: {fileID: 0}
+  UIAfterDeath: {fileID: 0}
+  Gun: {fileID: 0}

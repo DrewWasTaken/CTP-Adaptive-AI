@@ -5,21 +5,20 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _maxHealth = 50;
-    [SerializeField] private float _health;
-    [SerializeField] private int _score = 10;
-    [SerializeField] private float _strength = 10f;
-    [SerializeField] private float _destroyDelay = 3f;
-    [SerializeField] private float _attackDelay = 2f;
-    [SerializeField] private float _speed = 5f;
-
-    public Image healthBar;
-
+    [SerializeField] private float _maxHealth = 50; // Enemy Max Health
+    [SerializeField] private int _score = 10;       // Score Per Kill
+    [SerializeField] private float _strength = 10f; // Damage Against Player
+    [SerializeField] private float _speed = 5f;     // Enemy Speed
+    private float _health;
+    private float _destroyDelay = 3f;
+    private float _attackDelay = 2f;
+    
     private bool _dying = false;
-    Player _collidingPlayer = null;
-
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
+
+    public Image healthBar;
+    Player _collidingPlayer = null;
 
     void Start()
     {
@@ -84,6 +83,7 @@ public class Enemy : MonoBehaviour
     void OnTriggerExit(Collider collider)
     {
         _collidingPlayer = null;
+        ResetMovement();
     }
 
     private void Die()
@@ -96,6 +96,7 @@ public class Enemy : MonoBehaviour
             _animator.SetTrigger("Die");
             EnemySpawner.instance.OnEnemyDeath(transform.position);
             this.GetComponentInChildren<Canvas>().enabled = false;
+            this.GetComponent<CapsuleCollider>().enabled = false;
             Destroy(this.gameObject, _destroyDelay);
         }
     }

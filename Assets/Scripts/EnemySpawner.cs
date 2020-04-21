@@ -56,6 +56,18 @@ public class EnemySpawner : MonoBehaviour
     public void Start()
     {
         ProceedToNextWave();
+
+        if (_gameOver)
+        {
+            Cursor.visible = true;
+            MouseLook.SetCursorLock(false);
+        }
+        else 
+        {
+            Cursor.visible = false;
+            MouseLook.SetCursorLock(true);
+        }
+
     }
 
     public void Update()
@@ -74,19 +86,24 @@ public class EnemySpawner : MonoBehaviour
 
     public void EndGame()
     {
-        //Debug.Log("Game Over");
         _gameOver = true;
-        player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
-        Gun.GetComponent<Gun>().enabled = false;
-        UIAfterDeath.GetComponent<Canvas>().enabled = false;
-        //Cursor.visible = true;
+        Debug.Log("Game Over");
+
+        if (_gameOver == true)
+        {
+            player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
+            Gun.GetComponent<Gun>().enabled = false;
+            UIAfterDeath.GetComponent<Canvas>().enabled = false;
+            Cursor.visible = true;
+            MouseLook.SetCursorLock(false);
+        }
 
         if (player._health <= 0)
         {
             //Loser Screen
             gameOverUI.SetActive(true);
         }
-        else
+        else //All Waves Cleared
         {
             //Victory Screen
             victoryUI.SetActive(true);
