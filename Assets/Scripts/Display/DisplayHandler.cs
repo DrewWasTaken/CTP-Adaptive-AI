@@ -9,6 +9,8 @@ public class DisplayHandler : MonoBehaviour
     [SerializeField] Text _remainingEnemies = null;
     [SerializeField] Text _health = null;
     [SerializeField] Text _score = null;
+    [SerializeField] Text _winFinalScore = null;
+    [SerializeField] Text _lossFinalScore = null;
 
     private static DisplayHandler _instance;
     public static DisplayHandler instance { get => _instance; }
@@ -48,5 +50,8 @@ public class DisplayHandler : MonoBehaviour
     public void UpdateScore(int score)
     {
         _score.text = score.ToString();
+        _winFinalScore.text = score.ToString();
+        _lossFinalScore.text = score.ToString();
+
     }
 }

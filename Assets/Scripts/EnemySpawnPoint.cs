@@ -4,7 +4,7 @@ public class EnemySpawnPoint : MonoBehaviour
 {
     [Header("Probability Properties")]
     [SerializeField] [Range(0f, 1f)] private float _probability = 0.5f;
-    [SerializeField] [Range(0f, 1f)] private float _probabilityStep = 0.1f;
+    [SerializeField] [Range(0f, 1f)] private float _probabilityStep = 0.05f;
     private float _probabilityFloor = 0f;                                  
     private float _probabilityCeiling = 1f;
 

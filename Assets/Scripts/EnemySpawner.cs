@@ -18,6 +18,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject victoryUI;
     [SerializeField] private GameObject UIAfterDeath;
     [SerializeField] private GameObject Gun;
+    [SerializeField] private GameObject pauseMenu;
+
     private Player player;    
 
     public void Awake()
@@ -94,6 +96,7 @@ public class EnemySpawner : MonoBehaviour
             player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
             Gun.GetComponent<Gun>().enabled = false;
             UIAfterDeath.GetComponent<Canvas>().enabled = false;
+            pauseMenu.GetComponent<PauseMenu>().enabled = false;
             Cursor.visible = true;
             MouseLook.SetCursorLock(false);
         }
