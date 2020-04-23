@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float _maxHealth = 100f;
     public float _health;
     [SerializeField] private int _score;
-    [SerializeField] private float _interactionRadius = 1.5f;
+    [SerializeField] private float _interactionRadius = 0.75f;
     [SerializeField] private Image damageImage;
     private bool damaged = false;
     private float _fadingDelay = 0.5f;
